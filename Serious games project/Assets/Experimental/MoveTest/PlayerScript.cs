@@ -3,7 +3,8 @@ using UnityEngine;
 public class PlayerScript : MonoBehaviour
 {
     Rigidbody2D rb;
-    [SerializeField] Joystick movement;
+   // [SerializeField] Joystick movement;
+    [SerializeField] ButtonScript leftButton, rightButton;
     [SerializeField] float movementSpeed;
     [SerializeField] Sprite[] playerMovement;
     [SerializeField] float timePerSprite;
@@ -16,9 +17,27 @@ public class PlayerScript : MonoBehaviour
     float currentWalkingTimmer = 0;
     int currentIndex = 0;
 
+    int movingDirection;
+    bool oldFlip = true;
     void Update() {
+        movingDirection = 0;
+        if (leftButton.IsPressed) {
+            movingDirection -= 1;
+            if (!rightButton.IsPressed) {
+                oldFlip = false;
+            }
+        }
+        if (rightButton.IsPressed) {
+            movingDirection += 1;
+            if (!leftButton.IsPressed) {
+                oldFlip = true;
+            }
+        }
+
+
         if (!DialogueManager.Instance.isInDialogue) {
-            if (movement.usingJoystick) {
+            #region oldwalking system jotstick
+            /*if (movement.usingJoystick) {
                 currentWalkingTimmer += Time.deltaTime;
                 if (currentWalkingTimmer >= timePerSprite) {
                     currentWalkingTimmer = 0;
@@ -29,6 +48,22 @@ public class PlayerScript : MonoBehaviour
                     sr.sprite = playerMovement[currentIndex];
                 }
                 sr.flipX = movement.joyPos.x >= 0 ? true : false;
+            }
+            else {
+                sr.sprite = playerMovement[0];
+            }*/
+            #endregion
+            if (!movingDirection.Equals(0)) {
+                currentWalkingTimmer += Time.deltaTime;
+                if (currentWalkingTimmer >= timePerSprite) {
+                    currentWalkingTimmer = 0;
+                    currentIndex++;
+                    if (currentIndex >= playerMovement.Length) {
+                        currentIndex = 0;
+                    }
+                    sr.sprite = playerMovement[currentIndex];
+                }
+                sr.flipX = oldFlip;
             }
             else {
                 sr.sprite = playerMovement[0];
@@ -57,7 +92,8 @@ public class PlayerScript : MonoBehaviour
     }
     private void FixedUpdate() {
         if (!DialogueManager.Instance.isInDialogue) {
-            rb.MovePosition(transform.position + (movement.joyPos * movementSpeed));
+            // rb.MovePosition(transform.position + (movement.joyPos * movementSpeed));
+            rb.MovePosition(transform.position + (Vector3.right * movingDirection * movementSpeed));
         }
     }
 }
