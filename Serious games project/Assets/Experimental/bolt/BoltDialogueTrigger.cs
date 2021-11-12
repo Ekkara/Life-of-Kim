@@ -4,20 +4,18 @@ using UnityEngine;
 using Ludiq;
 using Bolt;
 
-public class BoltDialogueTrigger : MonoBehaviour
+public class BoltDialogueTrigger : Interactable
 {
     [SerializeField] FlowMacro dialogue;
-    // Start is called before the first frame update
-    private void Start() {
-       
-    }
-   public void TriggerDialogue() {
+    public override void InteractWithItem() {
         DialogueManager.Instance.StartDialogue(dialogue);
     }
-
+    public void TriggerDialogue() {
+        InteractWithItem();
+    }
     void Update() {
         if (Input.GetKeyDown(KeyCode.Space)) {
-            DialogueManager.Instance.StartDialogue(dialogue);          
+            InteractWithItem();
         }
     }
 }
