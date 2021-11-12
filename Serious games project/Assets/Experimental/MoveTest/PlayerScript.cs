@@ -4,8 +4,6 @@ using UnityEngine;
 public class PlayerScript : MonoBehaviour
 {
     Rigidbody2D rb;
-    // [SerializeField] Joystick movement;
-    [SerializeField] ButtonScript leftButton, rightButton;
     [SerializeField] float movementSpeed;
     [SerializeField] Sprite[] playerMovement;
     [SerializeField] float timePerSprite;
@@ -40,28 +38,6 @@ public class PlayerScript : MonoBehaviour
         }
 
         if (!DialogueManager.Instance.isInDialogue) {
-            #region oldwalking system jotstick
-            /*if (movement.usingJoystick) {
-                currentWalkingTimmer += Time.deltaTime;
-                if (currentWalkingTimmer >= timePerSprite) {
-                    currentWalkingTimmer = 0;
-                    currentIndex++;
-                    if (currentIndex >= playerMovement.Length) {
-                        currentIndex = 0;
-                    }
-                    sr.sprite = playerMovement[currentIndex];
-                }
-                sr.flipX = movement.joyPos.x >= 0 ? true : false;
-            }
-            else {
-                sr.sprite = playerMovement[0];
-            }*/
-            #endregion
-
-
-
-       
-
 
             //activate interactables
             foreach (Touch touch in Input.touches) {
@@ -78,9 +54,6 @@ public class PlayerScript : MonoBehaviour
 
                         if (interactable != null) {
                             StartCoroutine(WalkToPoint(transform.position.x, touchPos.x, interactable));
-                            /*if (interactable.inRange) {
-                                interactable.InteractWithItem();
-                            }*/
                         }
                         else {
                             StartCoroutine(WalkToPoint(transform.position.x, touchPos.x));
@@ -91,12 +64,6 @@ public class PlayerScript : MonoBehaviour
                     }
                 }
             }
-        }
-    }
-    private void FixedUpdate() {
-        if (!DialogueManager.Instance.isInDialogue) {
-            // rb.MovePosition(transform.position + (movement.joyPos * movementSpeed));
-            //rb.MovePosition(transform.position + (Vector3.right * movingDirection * movementSpeed));
         }
     }
 
