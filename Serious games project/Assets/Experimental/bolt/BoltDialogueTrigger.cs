@@ -11,6 +11,10 @@ public class BoltDialogueTrigger : MonoBehaviour
     private void Start() {
        
     }
+   public void TriggerDialogue() {
+        DialogueManager.Instance.StartDialogue(dialogue);
+    }
+
     void Update() {
         if (Input.GetKeyDown(KeyCode.Space)) {
             DialogueManager.Instance.StartDialogue(dialogue);          

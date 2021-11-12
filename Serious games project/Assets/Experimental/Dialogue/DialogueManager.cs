@@ -77,6 +77,7 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue() {
         isInDialogue = false;
         dialogueObjectHolder.SetActive(false);
+        Debug.Log("conversation over");
     }
 
 

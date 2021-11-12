@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    
     private static GameManager _instance;
     public static GameManager Instance { get { return _instance; } }
     private void Awake() {
@@ -15,6 +16,7 @@ public class GameManager : MonoBehaviour
         else {
             _instance = this;
         }
+        DontDestroyOnLoad(gameObject);
     }
     public void ChangeScene(string sceneName) {
         SceneManager.LoadScene(sceneName);
