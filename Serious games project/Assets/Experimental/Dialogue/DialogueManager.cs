@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Ludiq;
@@ -6,9 +7,11 @@ using Bolt;
 
 public class DialogueManager : MonoBehaviour
 {
+   
     private static DialogueManager _instance;
     public static DialogueManager Instance { get { return _instance; } }
     private void Awake() {
+        
         if (_instance != null && _instance != this) {
             Destroy(gameObject);
             Debug.LogError("too many dialoguemanagers in the scene!");
@@ -177,4 +180,22 @@ public class DialogueManager : MonoBehaviour
         branchPath = 0;
     }
     #endregion
+
+    //fork stuff
+    Dictionary<string, List<string>> savedForkTags = new Dictionary<string, List<string>>();
+
+    public bool IsForkedUsed(string Scene, string tag) {
+        if (savedForkTags.ContainsKey(Scene)) {
+            return savedForkTags[Scene].Contains(tag);
+        }
+        else {
+            return false;
+        }
+    }
+    public void AddUsedFork(string scene, string tag) {
+        if (!savedForkTags.ContainsKey(scene)) {
+            savedForkTags.Add(scene, new List<string>());
+        }
+        savedForkTags[scene].Add(tag);
+    }
 }

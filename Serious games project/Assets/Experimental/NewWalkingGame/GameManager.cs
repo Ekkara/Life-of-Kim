@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    
     private static GameManager _instance;
     public static GameManager Instance { get { return _instance; } }
     private void Awake() {
@@ -21,6 +20,21 @@ public class GameManager : MonoBehaviour
     public void ChangeScene(string sceneName) {
         SceneManager.LoadScene(sceneName);
     }
+
+    public string GetSceneName() {
+        return SceneManager.GetActiveScene().name;
+    }
+
+    [SerializeField] EnergyBar energyBar;
+    public void ChangeEnergyValue(float value, bool fixedValue = false) {
+        if (fixedValue) {
+            energyBar.SetValue(value);
+        }
+        else {
+            energyBar.ChangeValue(value);
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {

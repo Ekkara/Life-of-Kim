@@ -22,6 +22,12 @@ public class EnergyBar : MonoBehaviour
         currentGoal = Mathf.Clamp(currentGoal, minVal, maxVal);    
         StartCoroutine(AlterValue(slider.value));
     }
+    public void SetValue(float value) {
+        StopAllCoroutines();
+        currentGoal = value;
+        currentGoal = Mathf.Clamp(currentGoal, minVal, maxVal);
+        StartCoroutine(AlterValue(slider.value));
+    }
     IEnumerator AlterValue(float currentValue) {
         float timeElapsed = 0;
         while (!slider.value.Equals(currentGoal)) {

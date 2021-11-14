@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Experimental/NewWalkingGame/BedRoom.unity
     guid: 344c03168bd27bd41824a9162b29fe3b
+  - enabled: 1
+    path: Assets/Experimental/MinigameSort/MG_Sort.unity
+    guid: 2fd2d957f4379574cbd4bc765de00215
   m_configObjects: {}
