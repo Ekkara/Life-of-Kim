@@ -44,7 +44,8 @@ public class MobileInputManager : MonoBehaviour
 
     private void Awake() {
         if (_instance != null && _instance != this) {
-            Destroy(gameObject);
+            // Destroy(gameObject);
+            Destroy(GetComponent<MobileInputManager>());
             Debug.LogError("too many inputmanagers in the scene!");
         }
         else {

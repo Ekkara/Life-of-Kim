@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
     public void ChangeScene(string sceneName) {
+        DialogueManager.Instance.EndDialogue();
         SceneManager.LoadScene(sceneName);
     }
 
@@ -33,6 +34,10 @@ public class GameManager : MonoBehaviour
         else {
             energyBar.ChangeValue(value);
         }
+    }
+    public void HideEnergyBar(bool value)
+    {
+        energyBar.gameObject.SetActive(value);
     }
 
     // Start is called before the first frame update

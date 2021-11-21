@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1893448595, guid: a040fb66244a7f54289914d98ea4ef7d, type: 3}
+  m_Name: Dialogue_Base 1
+  m_EditorClassIdentifier: 
+  _data:
+    _json: '{"graph":{"variables":{"collection":{"$content":[],"$version":"A"},"$version":"A"},"controlInputDefinitions":[{"key":"Entry","label":null,"summary":null,"hideLabel":false}],"controlOutputDefinitions":[{"key":"exit","label":null,"summary":null,"hideLabel":false}],"valueInputDefinitions":[],"valueOutputDefinitions":[],"title":null,"summary":null,"pan":{"x":-1960.333,"y":-701.9001},"zoom":1.0,"elements":[{"nest":{"source":"Macro","macro":0,"embed":null},"defaultValues":{},"position":{"x":-2323.0,"y":-889.0},"guid":"ae6a0c85-585d-4858-8eda-dbae6f1f5273","$version":"A","$type":"Bolt.SuperUnit","$id":"11"},{"nest":{"source":"Macro","macro":1,"embed":null},"defaultValues":{"amountOfOptions":{"$content":2,"$type":"System.Int32"},"FirstButton":{"$content":"Stop
+      talking","$type":"System.String"},"SecondButton":{"$content":"Exit dialogue","$type":"System.String"},"ThirdButton":null,"ForthButton":null},"position":{"x":-718.0,"y":-988.0},"guid":"46083d96-c0c6-4a6d-83b6-5dcd3ebd17e8","$version":"A","$type":"Bolt.SuperUnit"},{"nest":{"source":"Macro","macro":2,"embed":null},"defaultValues":{"tag":{"$content":"null","$type":"System.String"}},"position":{"x":-2110.0,"y":-867.0},"guid":"95bb4806-ad64-4cb8-942f-64335f877a89","$version":"A","$type":"Bolt.SuperUnit","$id":"17"},{"sourceUnit":{"$ref":"11"},"sourceKey":"Exit","destinationUnit":{"$ref":"17"},"destinationKey":"Entry","guid":"b5f57de2-51b0-4818-a5da-dba42b6fa08f","$type":"Bolt.ControlConnection"}],"$version":"A"}}'
+    _objectReferences:
+    - {fileID: 11400000, guid: c67c1b17ed0980a4da214e79a3581690, type: 2}
+    - {fileID: 11400000, guid: 26efdc9708bab6a49a939cfd8f008896, type: 2}
+    - {fileID: 11400000, guid: 580ba2bb8ff962043bc3db3bd3ca12f0, type: 2}
