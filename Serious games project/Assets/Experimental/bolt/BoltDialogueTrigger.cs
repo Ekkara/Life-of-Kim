@@ -7,6 +7,7 @@ using Bolt;
 public class BoltDialogueTrigger : Interactable
 {
     [SerializeField] FlowMacro dialogue;
+    [SerializeField] bool forceActivation = false;
     public override void InteractWithItem() {
         DialogueManager.Instance.StartDialogue(dialogue);
     }
@@ -14,8 +15,10 @@ public class BoltDialogueTrigger : Interactable
         InteractWithItem();
     }
     void Update() {
-        if (Input.GetKeyDown(KeyCode.Space)) {
+
+        if (Input.GetKeyDown(KeyCode.Space) || forceActivation) {
             InteractWithItem();
+            forceActivation = false;
         }
     }
 }

@@ -30,7 +30,7 @@ public class DialogueManager : MonoBehaviour
         get;
     }
     [SerializeField] GameObject dialogueObjectHolder;
-    [SerializeField] Text name, mainText;
+    [SerializeField] Text _name, mainText;
     FlowMacro GN;
 
     private void Start() {
@@ -64,7 +64,7 @@ public class DialogueManager : MonoBehaviour
         DC.nameOfSpeaker = name;
 
         mainText.text = "";
-        this.name.text = "";
+        this._name.text = "";
 
         //start the new dialogue animation
         StartCoroutine(DisplayDialogue(DC));
@@ -77,7 +77,7 @@ public class DialogueManager : MonoBehaviour
         wasLastNode = false;
         StopAllCoroutines();
     }
-    void EndDialogue() {
+    public void EndDialogue() {
         isInDialogue = false;
         dialogueObjectHolder.SetActive(false);
         Debug.Log("conversation over");
@@ -103,7 +103,7 @@ public class DialogueManager : MonoBehaviour
     }
 
     IEnumerator DisplayDialogue(DialogueC DC) {
-        name.text = DC.nameOfSpeaker;
+        _name.text = DC.nameOfSpeaker;
         string displayedMessage = "";
         for (int j = 0; j < DC.message.Length; j++) {
             displayedMessage += DC.message.Substring(j, 1);
@@ -133,7 +133,7 @@ public class DialogueManager : MonoBehaviour
 
     public void SetUpBranching(int amount, string firstText, string secondText, string thirdText, string forthText) {
         mainText.text = "";
-        name.text = "";
+        _name.text = "";
 
         firstOptionText.text = firstText;
         secondOptionText.text = secondText;
@@ -197,5 +197,19 @@ public class DialogueManager : MonoBehaviour
             savedForkTags.Add(scene, new List<string>());
         }
         savedForkTags[scene].Add(tag);
+    }
+
+    //Scen enter
+    List<string> enteredSceneNames = new List<string>();
+    public bool FirstTimeEnteredScene(string sceneName)
+    {
+        return enteredSceneNames.Contains(sceneName);
+    }
+    public void AddSceneName(string sceneName)
+    {
+        if (!enteredSceneNames.Contains(sceneName))
+        {
+            enteredSceneNames.Add(sceneName);
+        }
     }
 }
