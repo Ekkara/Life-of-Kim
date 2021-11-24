@@ -32,6 +32,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] GameObject dialogueObjectHolder;
     [SerializeField] Text _name, mainText;
     FlowMacro GN;
+    [SerializeField] AudioSource dialogueAudioSoruce;
 
     private void Start() {
         dialogueObjectHolder.SetActive(false);
@@ -53,7 +54,7 @@ public class DialogueManager : MonoBehaviour
         gameObject.GetComponent<FlowMachine>().nest.macro = FM;
         CustomEvent.Trigger(gameObject, "StartDialogue", 0);
     }
-    public void UpdateDialogBox(string name, string message, float letterApearSpeed, Sprite pfp, bool prioritized = false) {
+    public void UpdateDialogBox(string name, string message, float letterApearSpeed, Sprite pfp, AudioClip audioClip, bool prioritized = false) {
         //display the dialogue object
         dialogueObjectHolder.SetActive(true);
 
@@ -68,6 +69,9 @@ public class DialogueManager : MonoBehaviour
 
         //start the new dialogue animation
         StartCoroutine(DisplayDialogue(DC));
+        if (audioClip != null) {
+            dialogueAudioSoruce.PlayOneShot(audioClip);
+        }
     }
     public void StartWasLastSearch() {
         wasLastNode = true;
@@ -86,6 +90,7 @@ public class DialogueManager : MonoBehaviour
 
     bool ContinueButton = false;
     public void PressedContinue() {
+        dialogueAudioSoruce.Stop();
         ContinueButton = true;
     }
 
