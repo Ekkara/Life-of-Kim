@@ -469,6 +469,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 414869896}
   m_CullTransparentMesh: 1
+--- !u!1 &488239674 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6425859344757219599, guid: 6c56645ea44d5eb48b1f91953a88d4d7,
+    type: 3}
+  m_PrefabInstance: {fileID: 6425859344191563013}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &488239675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488239674}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd981fc436b8fe7469870abdf4a573d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeed: 0
+  playerMovement: []
+  timePerSprite: 0
 --- !u!1 &504832988
 GameObject:
   m_ObjectHideFlags: 0
@@ -557,6 +578,7 @@ MonoBehaviour:
   dialogueObjectHolder: {fileID: 504832988}
   _name: {fileID: 1203045548}
   mainText: {fileID: 972500967}
+  dialogueAudioSoruce: {fileID: 0}
   firstOption: {fileID: 580915598}
   seconOption: {fileID: 704016975}
   thirdOption: {fileID: 1460666296}
