@@ -10,9 +10,12 @@ public class MG_SwiperScript : MonoBehaviour
     [SerializeField] GameObject[] relevantObjects;
     [SerializeField] Slider timeSlider;
     [SerializeField] float timePerSlide = 1;
+    [SerializeField] float extraTimeFirstTime;
+    bool wasFirst = true;
 
     private void Start()
     {
+        wasFirst = true;
         for (int i = 0; i < relevantObjects.Length; i++)
         {
             relevantObjects[i].gameObject.SetActive(false);
@@ -42,6 +45,8 @@ public class MG_SwiperScript : MonoBehaviour
         timeSlider.value = 1;
 
         float timeRunning = 0;
+        float timeToRun = wasFirst ? (extraTimeFirstTime + timePerSlide) : timePerSlide;
+        wasFirst = false;
         while (activated)
         {
             if (!isSwiping)

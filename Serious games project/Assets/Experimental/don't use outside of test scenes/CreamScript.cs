@@ -36,7 +36,7 @@ public class CreamScript : MonoBehaviour
             targetPos = new Vector3((rightPoint.position.x + player.position.x) / 2, transform.position.y, transform.position.z);
         }
         //  transform.position = Vector3.MoveTowards(transform.position, targetPos, Time.deltaTime * patrolSpeed);
-        transform.position = Vector3.Lerp(transform.position, targetPos, Time.deltaTime * patrolSpeed) + new Vector3(0.05f * Mathf.Sin(Time.time * 14),0,0);
+        transform.position = Vector3.Lerp(transform.position, targetPos, Time.deltaTime * patrolSpeed) + (transform.position + new Vector3(0.05f * Mathf.Sin(Time.time * 14),0,0));
 
         timer += Time.deltaTime;
         if (timer >= spawnSpeed) {
