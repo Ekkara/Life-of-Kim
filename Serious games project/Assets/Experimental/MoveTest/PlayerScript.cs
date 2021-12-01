@@ -8,6 +8,8 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] Sprite[] playerMovement;
     [SerializeField] float timePerSprite;
     SpriteRenderer sr;
+    
+
     private void Start() {
         sr = gameObject.GetComponent<SpriteRenderer>();
         rb = gameObject.GetComponent<Rigidbody2D>();

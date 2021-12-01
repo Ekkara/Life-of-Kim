@@ -10,9 +10,12 @@ public class MG_Selecter : MonoBehaviour
     [SerializeField] Slider timeSlider;
     [SerializeField] float timePerSlide = 2.5f;
     [SerializeField] Transform firstOption, secondOption, thirdOption, forthOption;
+    [SerializeField] float extraTimeFirst;
+    bool firstTime;
 
     private void Start()
     {
+        firstTime = true;
         for (int i = 0; i < relevantObjects.Length; i++)
         {
             relevantObjects[i].gameObject.SetActive(false);
@@ -51,11 +54,14 @@ public class MG_Selecter : MonoBehaviour
 
         timeSlider.value = 1;
 
+        float actualTime = firstTime ? (timePerSlide + extraTimeFirst) : timePerSlide;
+         firstTime = false;
+
         float timeCounter = 0;
         while (answer.Equals(0))
         {           
             timeCounter += Time.deltaTime;
-            timeSlider.value = Mathf.Lerp(1, 0, timeCounter / timePerSlide);
+            timeSlider.value = Mathf.Lerp(1, 0, timeCounter / actualTime);
             if (timeSlider.value.Equals(0))
             {
                 break;

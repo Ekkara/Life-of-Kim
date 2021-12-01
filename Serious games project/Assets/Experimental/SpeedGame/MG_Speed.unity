@@ -585,7 +585,8 @@ MonoBehaviour:
   - {fileID: 1038989389}
   - {fileID: 441443140}
   timeSlider: {fileID: 1038989391}
-  timePerSlide: 1
+  timePerSlide: 2
+  extraTimeFirstTime: 2
 --- !u!1 &285131117
 GameObject:
   m_ObjectHideFlags: 0
@@ -2240,11 +2241,12 @@ MonoBehaviour:
   - {fileID: 1038989389}
   - {fileID: 1779484942}
   timeSlider: {fileID: 1038989391}
-  timePerSlide: 2.2
+  timePerSlide: 2.5
   firstOption: {fileID: 678350469}
   secondOption: {fileID: 695871351}
   thirdOption: {fileID: 1971423809}
   forthOption: {fileID: 1246878344}
+  extraTimeFirst: 2
 --- !u!1 &1592165637
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1893448595, guid: a040fb66244a7f54289914d98ea4ef7d, type: 3}
+  m_Name: BackToRoom
+  m_EditorClassIdentifier: 
+  _data:
+    _json: '{"graph":{"variables":{"collection":{"$content":[],"$version":"A"},"$version":"A"},"controlInputDefinitions":[{"key":"Entry","label":null,"summary":null,"hideLabel":false}],"controlOutputDefinitions":[{"key":"exit","label":null,"summary":null,"hideLabel":false}],"valueInputDefinitions":[],"valueOutputDefinitions":[],"title":null,"summary":null,"pan":{"x":-2064.062,"y":-701.9001},"zoom":1.0,"elements":[{"nest":{"source":"Macro","macro":0,"embed":null},"defaultValues":{},"position":{"x":-2487.0,"y":-906.0},"guid":"ae6a0c85-585d-4858-8eda-dbae6f1f5273","$version":"A","$type":"Bolt.SuperUnit","$id":"11"},{"nest":{"source":"Macro","macro":1,"embed":null},"defaultValues":{"amountOfOptions":{"$content":2,"$type":"System.Int32"},"FirstButton":{"$content":"Stop
+      talking","$type":"System.String"},"SecondButton":{"$content":"Exit dialogue","$type":"System.String"},"ThirdButton":null,"ForthButton":null},"position":{"x":-718.0,"y":-988.0},"guid":"46083d96-c0c6-4a6d-83b6-5dcd3ebd17e8","$version":"A","$type":"Bolt.SuperUnit"},{"nest":{"source":"Macro","macro":2,"embed":null},"defaultValues":{"Name":{"$content":"Kim","$type":"System.String"},"Message":{"$content":"nah,
+      I have to go to school, I''ll be late if I go to my room now.","$type":"System.String"},"DisplayLetterSpeed":{"$content":0.05,"$type":"System.Single"},"ProfilePicture":{"$content":3,"$type":"UnityEngine.Object"},"audioClip":null},"position":{"x":-2276.0,"y":-911.0},"guid":"fcba6dc9-adb0-4518-a639-541e4185e873","$version":"A","$type":"Bolt.SuperUnit","$id":"17"},{"sourceUnit":{"$ref":"11"},"sourceKey":"Exit","destinationUnit":{"$ref":"17"},"destinationKey":"Entry","guid":"34234111-60d1-48a2-8b9a-c27eed4c8cb1","$type":"Bolt.ControlConnection"}],"$version":"A"}}'
+    _objectReferences:
+    - {fileID: 11400000, guid: c67c1b17ed0980a4da214e79a3581690, type: 2}
+    - {fileID: 11400000, guid: 26efdc9708bab6a49a939cfd8f008896, type: 2}
+    - {fileID: 11400000, guid: c6b3f6a3d94531146af04d44898551e7, type: 2}
+    - {fileID: 21300000, guid: 9249cdad18999f942a473cc6cf95b02d, type: 3}
