@@ -135,6 +135,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: boltDialogue (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4882784617972575283, guid: 6294f8475925867429c8dc407e5b8f17,
+        type: 3}
+      propertyPath: dialogue
+      value: 
+      objectReference: {fileID: 11400000, guid: c7e90d42979f22047b87e433665919bc,
+        type: 2}
     - target: {fileID: 4882784617972575284, guid: 6294f8475925867429c8dc407e5b8f17,
         type: 3}
       propertyPath: m_RootOrder
@@ -455,6 +461,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: boltDialogue (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4882784617972575283, guid: 6294f8475925867429c8dc407e5b8f17,
+        type: 3}
+      propertyPath: dialogue
+      value: 
+      objectReference: {fileID: 11400000, guid: fc59fe23b7d425743a23a4a343a6531b,
+        type: 2}
     - target: {fileID: 4882784617972575284, guid: 6294f8475925867429c8dc407e5b8f17,
         type: 3}
       propertyPath: m_RootOrder
