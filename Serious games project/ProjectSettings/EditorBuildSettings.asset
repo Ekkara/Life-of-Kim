@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Experimental/MainMenu/MainMenu.unity
+    guid: 476ac75960016cf45babf071d7b28218
+  - enabled: 1
     path: Assets/Scenes/BedRoom.unity
     guid: 344c03168bd27bd41824a9162b29fe3b
   - enabled: 0
@@ -17,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Kitchen.unity
     guid: 14c8b6163e369d445956dae29f5dff80
+  - enabled: 1
+    path: Assets/Scenes/BullyHouse.unity
+    guid: 12e9a535168dce9498fc90a4e5ab30e3
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000

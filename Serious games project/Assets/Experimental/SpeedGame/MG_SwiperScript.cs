@@ -87,7 +87,7 @@ public class MG_SwiperScript : MonoBehaviour
                 activated = false;
             }
             timeRunning += Time.deltaTime;
-            timeSlider.value = Mathf.Lerp(1, 0, timeRunning / timePerSlide);
+            timeSlider.value = Mathf.Lerp(1, 0, timeRunning / timeToRun);
             if(timeSlider.value.Equals(0))
             {
                 activated = false;
