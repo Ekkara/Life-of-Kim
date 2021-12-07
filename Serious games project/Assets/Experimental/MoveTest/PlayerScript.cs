@@ -66,6 +66,36 @@ public class PlayerScript : MonoBehaviour
                     }
                 }
             }
+
+
+            //PC USE
+            #region pc use
+
+            if (Input.GetMouseButtonDown(0)) {
+                StopAllCoroutines();
+                Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
+               
+                int layerMask = ~LayerMask.GetMask("Ignore Raycast");
+                Collider2D touchedCollider = Physics2D.OverlapPoint(mousePos2D, layerMask);
+                if (touchedCollider != null) {
+                    Interactable interactable = touchedCollider.GetComponent<Interactable>();
+
+
+                    if (interactable != null) {
+                        StartCoroutine(WalkToPoint(transform.position.x, mousePos2D.x, interactable));
+                    }
+                    else {
+                        StartCoroutine(WalkToPoint(transform.position.x, mousePos2D.x));
+                    }
+                }
+                else {
+                    StartCoroutine(WalkToPoint(transform.position.x, mousePos2D.x));
+                }
+            }
+            #endregion
+
+
         }
     }
 

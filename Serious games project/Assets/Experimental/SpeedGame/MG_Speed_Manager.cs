@@ -18,23 +18,16 @@ public class MG_Speed_Manager : MonoBehaviour
         score += scoreChanger;
         elementDone = state;
     }
-    // Start is called before the first frame update
-    void Start()
-    {
+    public void StartGame() {
+      
+    }
+    void Start() {
         elements = new MG_Speed_BuildingBlock[elementHolder.transform.childCount];
-        for (int i = 0; i < elementHolder.transform.childCount; i++)
-        {
+        for (int i = 0; i < elementHolder.transform.childCount; i++) {
             elements[i] = elementHolder.transform.GetChild(i).gameObject.GetComponent<MG_Speed_BuildingBlock>();
         }
         StartCoroutine(ElementFunc());
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
 
     [SerializeField] FlowMacro onGameEndWin,onGameEndFail;
     [SerializeField] int scoreToWin = 3;
