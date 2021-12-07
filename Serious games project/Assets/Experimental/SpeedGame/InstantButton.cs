@@ -30,5 +30,16 @@ public class InstantButton : MonoBehaviour
                 break;
             }
         }
+        if (Input.GetMouseButtonDown(0)) {
+            Vector2 touchPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            int layerMask = ~LayerMask.GetMask("Ignore Raycast");
+            Collider2D touchedCollider = Physics2D.OverlapPoint(touchPos, layerMask);
+
+            if (touchedCollider != null) {
+                if (touchedCollider.Equals(colider)) {
+                    events.Invoke();
+                }
+            }
+        }
     }
 }

@@ -47,10 +47,16 @@ public class MG_SwiperScript : MonoBehaviour
         float timeRunning = 0;
         float timeToRun = wasFirst ? (extraTimeFirstTime + timePerSlide) : timePerSlide;
         wasFirst = false;
+
+        bool usedMouse = false;
         while (activated)
         {
             if (!isSwiping)
             {
+                if (Input.GetMouseButtonDown(0)) {
+                    isSwiping = true;
+                    usedMouse = true;
+                }
                 foreach (Touch touch in Input.touches)
                 {
                     if (touch.phase == TouchPhase.Began)
@@ -66,18 +72,40 @@ public class MG_SwiperScript : MonoBehaviour
             }
             else
             {
-                touch = MobileInputManager.Instance.GetTouchFromFinggerID(touchIndex);
-                if (touch.phase == TouchPhase.Moved)
-                {
-                    Vector2 touchPos = Camera.main.ScreenToWorldPoint(touch.position);
-                    objectToSwipe.transform.position = new Vector3(
-                        touchPos.x - startSwipePos.x,
-                        objectToSwipe.transform.position.y,
-                        objectToSwipe.transform.position.z);
+                if (!usedMouse) {
+                    touch = MobileInputManager.Instance.GetTouchFromFinggerID(touchIndex);
+                    if (touch.phase == TouchPhase.Moved) {
+                        Vector2 touchPos = Camera.main.ScreenToWorldPoint(touch.position);
+                        objectToSwipe.transform.position = new Vector3(
+                            touchPos.x - startSwipePos.x,
+                            objectToSwipe.transform.position.y,
+                            objectToSwipe.transform.position.z);
+                    }
+                    else if (touch.phase == TouchPhase.Ended) {
+                        isSwiping = false;
+                        objectToSwipe.transform.position = new Vector3(
+                           startSwipePos.x,
+                           objectToSwipe.transform.position.y,
+                           objectToSwipe.transform.position.z);
+                    }
                 }
-                else if(touch.phase == TouchPhase.Ended)
-                {
-                    isSwiping = false;
+                else {
+                    if (Input.GetMouseButtonUp(0)) {
+                        isSwiping = false;
+                        usedMouse = false;
+
+                        objectToSwipe.transform.position = new Vector3(
+                       startSwipePos.x,
+                       objectToSwipe.transform.position.y,
+                       objectToSwipe.transform.position.z);
+                    }
+                    else {
+                        Vector2 touchPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                        objectToSwipe.transform.position = new Vector3(
+                            touchPos.x - startSwipePos.x,
+                            objectToSwipe.transform.position.y,
+                            objectToSwipe.transform.position.z);
+                    }
                 }
             }
 

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5062001749858291541}
   - component: {fileID: 3129477204984094406}
   - component: {fileID: 6339727989504270217}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: HealthyFood 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
