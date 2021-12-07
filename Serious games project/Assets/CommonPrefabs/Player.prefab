@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd981fc436b8fe7469870abdf4a573d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 2.5
+  movementSpeed: 2.7
   playerMovement:
   - {fileID: 21300000, guid: 49ffb349d81084a43bb4251a4e4bbb35, type: 3}
   - {fileID: 21300000, guid: 4ab6c7f3222fe704e8b74950a2e76b2e, type: 3}

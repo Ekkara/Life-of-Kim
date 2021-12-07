@@ -587,7 +587,7 @@ MonoBehaviour:
   - {fileID: 441443140}
   - {fileID: 715870807}
   timeSlider: {fileID: 1038989391}
-  timePerSlide: 8
+  timePerSlide: 3
   extraTimeFirstTime: 2
 --- !u!1 &285131117
 GameObject:
