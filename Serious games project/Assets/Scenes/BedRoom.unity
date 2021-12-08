@@ -326,7 +326,7 @@ PrefabInstance:
     - target: {fileID: 4882784617972575280, guid: 6294f8475925867429c8dc407e5b8f17,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4882784617972575283, guid: 6294f8475925867429c8dc407e5b8f17,
         type: 3}
@@ -4621,7 +4621,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 80
+  m_Value: 90
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -4637,7 +4637,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94aefbf5f9584174e87d060a2cd686b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  changeSpeed: 50
+  changeSpeed: 25
 --- !u!1 &2064087515
 GameObject:
   m_ObjectHideFlags: 0
