@@ -56,6 +56,7 @@ public class MG_SwiperScript : MonoBehaviour
                 if (Input.GetMouseButtonDown(0)) {
                     isSwiping = true;
                     usedMouse = true;
+                    startSwipePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 }
                 foreach (Touch touch in Input.touches)
                 {
@@ -95,7 +96,7 @@ public class MG_SwiperScript : MonoBehaviour
                         usedMouse = false;
 
                         objectToSwipe.transform.position = new Vector3(
-                       startSwipePos.x,
+                       startSwipePos.x - startSwipePos.x,
                        objectToSwipe.transform.position.y,
                        objectToSwipe.transform.position.z);
                     }
