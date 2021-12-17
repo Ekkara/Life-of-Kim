@@ -33,6 +33,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] Text _name, mainText;
     FlowMacro GN;
     [SerializeField] AudioSource dialogueAudioSoruce;
+    [SerializeField] Image speakingAvatar;
 
     private void Start() {
         dialogueObjectHolder.SetActive(false);
@@ -50,11 +51,18 @@ public class DialogueManager : MonoBehaviour
             return;
         }
         isInDialogue = true;
+        speakingAvatar.gameObject.SetActive(false);
         dialogueObjectHolder.SetActive(true);
         gameObject.GetComponent<FlowMachine>().nest.macro = FM;
         CustomEvent.Trigger(gameObject, "StartDialogue", 0);
     }
     public void UpdateDialogBox(string name, string message, float letterApearSpeed, Sprite pfp, AudioClip audioClip, bool prioritized = false) {
+
+        speakingAvatar.gameObject.SetActive(pfp != null);
+        if(pfp != null) {
+            speakingAvatar.sprite = pfp;
+        }
+       
         //display the dialogue object
         dialogueObjectHolder.SetActive(true);
 
